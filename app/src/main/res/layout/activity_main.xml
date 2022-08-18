@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/dados_para_a_vagaTv"
+        android:textSize="25sp"
+        android:textColor="@color/cardview_light_background"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:background="@color/teal_700"/>
+
+    <EditText
+        android:id="@+id/nomeCompletoEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nome_completoEt"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:minHeight="40dp"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:minHeight="40dp"
+        android:importantForAutofill="no"
+        android:hint="@string/e_mailEt"
+        android:inputType="textEmailAddress"
+        />
+
+    <CheckBox
+        android:id="@+id/desejoAtualizacoesCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/desejo_receber_atualizacoes_Cb"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:minHeight="40dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/telefoneLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/telefoneEt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/telefoneEt"
+            android:layout_margin="5dp"/>
+
+        <CheckBox
+            android:id="@+id/isTelefoneComercialCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/is_telefone_comercialCb"
+            android:layout_margin="5dp"
+            />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/addCelularCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:text="@string/adicionar_telefone_celularCb"
+        />
+
+    <EditText
+        android:id="@+id/celularEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:minHeight="40dp"
+        android:hint="@string/celular_com_dddEt"
+        android:visibility="gone"
+
+        />
+
+    <!--visibility="gone": campo celular só aparece se o checkbox de add cell for marcado-->
+
+    <!--LinearLayout para o sexo-->
+    <LinearLayout
+        android:id="@+id/sexoLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sexoTv"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:minHeight="40dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/sexoRg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/masculinoRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/masculinoRb"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:id="@+id/femininoRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/femininoRb"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

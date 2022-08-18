@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">HaVagas</string>
+    <string name="dados_para_a_vagaTv">Dados para a vaga</string>
+    <string name="nome_completoEt">Nome Completo</string>
+    <string name="e_mailEt">E-mail</string>
+    <string name="desejo_receber_atualizacoes_Cb">Desejo receber atualizações</string>
+    <string name="telefoneEt">Telefone</string>
+    <string name="is_telefone_comercialCb">É comercial?</string>
+    <string name="adicionar_telefone_celularCb">Adicionar Telefone Celular ?</string>
+    <string name="celular_com_dddEt">Celular(com ddd)</string>
+    <string name="sexoTv">Sexo:</string>
+    <string name="masculinoRb">Masculino</string>
+    <string name="femininoRb">Feminino</string>
+</resources>
