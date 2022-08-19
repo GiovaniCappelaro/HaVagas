@@ -148,7 +148,8 @@
                     android:text="@string/masculinoRb"
                     android:padding="5dp"
                     android:layout_margin="5dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:checked="true"/>
 
                 <RadioButton
                     android:id="@+id/femininoRb"
