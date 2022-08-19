@@ -32,6 +32,8 @@ public class Candidato {
         this.estadoCivil = estadoCivil;
     }
 
+    //LEMBRETE: usar os setters pra definir atributos que variam (ex: tituloMonografia), após criar os comuns com o construtor na MainActivity !!!
+
     //getters e setters:
     public String getNomeCompleto() {
         return nomeCompleto;
@@ -157,6 +159,6 @@ public class Candidato {
                 ", orientador='" + orientador +  '\'' +
                 '}';
     }
-    
+
 
 }
