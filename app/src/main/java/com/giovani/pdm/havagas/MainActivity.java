@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.giovani.pdm.havagas.databinding.ActivityMainBinding;
 
@@ -28,6 +29,55 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*---------LISTENNERS---------*/
+
+
+        //Salvar e exibir dados do Form
+        amb.salvarBt.setOnClickListener( view -> {
+
+            //construtor de Candidato - ITENS COMUNS A TODOS
+            candidato = new Candidato(
+                    amb.nomeCompletoEt.getText().toString(),
+                    amb.emailEt.getText().toString(),
+                    amb.telefoneEt.getText().toString(),
+                    amb.masculinoRb.isChecked() ? amb.masculinoRb.getText().toString() : amb.femininoRb.getText().toString(),
+                    amb.dataDeNascimentoEt.getText().toString(),
+                    amb.formacaoSp.getSelectedItem().toString(),
+                    amb.vagasInteresse.getText().toString()
+            );
+
+            //Atribuir atributos ESPECÍFICOS:
+
+            //celular:
+            if(amb.addCelularCb.isChecked()){
+                candidato.setCelular( amb.celularEt.getText().toString() ); //setar celular se estiver checado
+            }
+
+            //Formação:
+            if( (amb.formacaoSp.getSelectedItemPosition() == 0) || (amb.formacaoSp.getSelectedItemPosition() == 1) ){
+                candidato.setAnoFormatura(amb.anoDeFormaturaEt.getText().toString());
+
+                candidato.setAnoConclusao(null);
+                candidato.setInstituicao(null);
+                candidato.setTituloMonografia(null);
+                candidato.setOrientador(null);
+            }
+            if( (amb.formacaoSp.getSelectedItemPosition() == 2) || (amb.formacaoSp.getSelectedItemPosition() == 3) ){
+                candidato.setAnoConclusao(amb.anoDeConclusaoEt.getText().toString());
+                candidato.setInstituicao(amb.instituicaoEt.getText().toString());
+            }
+            if( (amb.formacaoSp.getSelectedItemPosition() == 4) || (amb.formacaoSp.getSelectedItemPosition() == 5) ){
+                candidato.setAnoConclusao(amb.anoDeConclusaoEt.getText().toString());
+                candidato.setInstituicao(amb.instituicaoEt.getText().toString());
+                candidato.setTituloMonografia(amb.tituloMonografiaEt.getText().toString());
+                candidato.setOrientador(amb.Orientador.getText().toString());
+
+            }
+
+            //Exibir
+            Toast.makeText(this, candidato.toString(), Toast.LENGTH_SHORT).show();
+
+        });
+
 
 
         //Limpar o form
@@ -96,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
 
     }

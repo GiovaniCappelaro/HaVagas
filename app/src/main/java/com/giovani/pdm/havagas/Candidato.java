@@ -9,27 +9,26 @@ public class Candidato {
     private String sexo;
     private String dataNascimento;
     private String formacao;
-    private String estadoCivil;
     private String anoFormatura; //*
     private String anoConclusao;
     private String instituicao;
     private String tituloMonografia;
-    private String orientador;
-
+    private String orientador;      //*
+    private String vagasInteresse;
     //construtores:
 
     public Candidato(){}
 
 
     //Com os atributos COMUNS A TODOS
-    public Candidato(String nomeCompleto, String email, String telefone, String sexo, String dataNascimento, String formacao, String estadoCivil){
+    public Candidato(String nomeCompleto, String email, String telefone, String sexo, String dataNascimento, String formacao, String vagasInteresse){
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.telefone = telefone;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.formacao = formacao;
-        this.estadoCivil = estadoCivil;
+        this.vagasInteresse = vagasInteresse;
     }
 
     //LEMBRETE: usar os setters pra definir atributos que variam (ex: tituloMonografia), após criar os comuns com o construtor na MainActivity !!!
@@ -91,13 +90,6 @@ public class Candidato {
         this.formacao = formacao;
     }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
 
     public String getAnoFormatura() {
         return anoFormatura;
@@ -139,6 +131,14 @@ public class Candidato {
         this.orientador = orientador;
     }
 
+    public String getVagasInteresse() {
+        return vagasInteresse;
+    }
+
+    public void setVagasInteresse(String vagasInteresse) {
+        this.vagasInteresse = vagasInteresse;
+    }
+
     //metodo toString
 
     @Override
@@ -151,7 +151,6 @@ public class Candidato {
                 ", sexo='" + sexo +  '\'' +
                 ", dataNascimento='" + dataNascimento  +  '\'' +
                 ", formacao='" + formacao +  '\'' +
-                ", estadoCivil='" + estadoCivil +  '\'' +
                 ", anoFormatura='" + anoFormatura +  '\'' +
                 ", anoConclusao='" + anoConclusao +  '\'' +
                 ", instituicao='" + instituicao +  '\'' +
