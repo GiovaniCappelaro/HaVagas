@@ -62,6 +62,15 @@
             android:minHeight="40dp"
             />
 
+        <Spinner
+            android:id="@+id/formacaoSp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Formacao"
+            android:minHeight="40dp"
+            android:textSize="16sp" />
+
         <LinearLayout
             android:id="@+id/telefoneLl"
             android:layout_width="match_parent"
@@ -107,9 +116,7 @@
             android:padding="5dp"
             android:minHeight="40dp"
             android:hint="@string/celular_com_dddEt"
-            android:visibility="gone"
-
-            />
+            android:visibility="gone"/>
 
         <!--visibility="gone": campo celular só aparece se o checkbox de add cell for marcado-->
 
@@ -185,16 +192,6 @@
             android:minHeight="40dp"
             android:textSize="16sp"/>
 
-
-        <Spinner
-            android:id="@+id/formacaoSp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:minHeight="40dp"
-            android:textSize="16sp"
-            android:entries="@array/Formacao"
-            />
 
         <!--Inputs text irão aparecer de acordo com o valor marcado no spinner acima-->
 

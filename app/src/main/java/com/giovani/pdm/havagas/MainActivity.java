@@ -3,6 +3,9 @@ package com.giovani.pdm.havagas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 
 import com.giovani.pdm.havagas.databinding.ActivityMainBinding;
 
@@ -40,6 +43,26 @@ public class MainActivity extends AppCompatActivity {
             amb.vagasInteresse.setText("");
             candidato = null;   //zerar o objeto
         });
+
+
+        /*Aparição de botões 'gone'*/
+
+        // -> Add celular - input
+        /*HELPS: https://stackoverflow.com/questions/8386832/android-checkbox-listener
+                 https://alvinalexander.com/source-code/android/android-checkbox-listener-setoncheckedchangelisteneroncheckedchangelistener-exam/
+         */
+
+        amb.addCelularCb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    amb.celularEt.setVisibility(View.VISIBLE);
+                }else{
+                    amb.celularEt.setVisibility(View.GONE);
+                }
+            }
+        });
+
 
     }
 
