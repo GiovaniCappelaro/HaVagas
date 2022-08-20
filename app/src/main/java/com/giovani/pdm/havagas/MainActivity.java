@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
@@ -64,12 +65,40 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //Baseados na formação: (talves precise ser tudo IF, sem ELSE)
+
+        amb.formacaoSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if( (i == 0) || (i == 1) ){
+                    amb.anoDeFormaturaEt.setVisibility(view.VISIBLE);   //fundamental e medio
+
+                    amb.anoConclusaoInstituicaoLl.setVisibility(view.GONE);
+                    amb.tituloMonografiaOrientadorLl.setVisibility(view.GONE);  //esconde dos outros
+                }
+                else if( (i == 2) || (i == 3) ){
+                    amb.anoConclusaoInstituicaoLl.setVisibility(view.VISIBLE);  //Graduação e especialização
+
+                    amb.anoDeFormaturaEt.setVisibility(view.GONE);
+                    amb.tituloMonografiaOrientadorLl.setVisibility(view.GONE); //esconde dos outros
+                }
+                else if( (i == 4) || (i == 5) ){
+                    amb.anoConclusaoInstituicaoLl.setVisibility(view.VISIBLE);
+                    amb.tituloMonografiaOrientadorLl.setVisibility(view.VISIBLE);
+
+                    amb.anoDeFormaturaEt.setVisibility(view.GONE);                  //mostra todos menos ano de formatura (só pra fund. e medio)
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
     }
-
-
-
-
-
 
 
 
