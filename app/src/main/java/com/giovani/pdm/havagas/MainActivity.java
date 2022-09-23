@@ -1,11 +1,14 @@
 package com.giovani.pdm.havagas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -18,8 +21,12 @@ public class MainActivity extends AppCompatActivity {
     private Candidato candidato;
 
 
+    //(ex aula07) - var LOG_TAG pra ver o state:
+    private static String LOG_TAG = "HAVAGAS_LOG_TAG";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         //instanciar o objeto da classe ActivityMainBinding
@@ -151,6 +158,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //EXERCICIO AULA 07 - Salvar e restaurar
+
+    //salvar
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(LOG_TAG, "Saved Instance State");
+
+        //tentando salvar o EditText de nome:
+        EditText editNome =  amb.nomeCompletoEt;
+        CharSequence dadosEditNome = editNome.getText();
+        outState.putCharSequence("EditNomeSave", dadosEditNome); //key, value
+    }
+
+    //restaurar
 
 
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(LOG_TAG, "Restored Instance State");
+
+        //tentando restaurar os dados salvos do EditText nome:
+        CharSequence dadosSalvosEditNome = savedInstanceState.getCharSequence("EditNomeSave");
+        EditText myEditNome =  amb.nomeCompletoEt;
+        myEditNome.setText(dadosSalvosEditNome);
+    }
 }
